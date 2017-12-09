@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# api endpoint
+# TODO: replace with according api endpoint for the cf provider
+export API="api.example.com"
+
+#credentials
+# TODO: replace with according username and password
+export USERNAME="youruser"
+export PASSWORD="yourpassword"
+
+# app config
+# TODO: replace with according app config as configured in manifest.yml and manifest.multi.yml
+export APPNAME="ruby-sinatra-blue"
+export APPNAME2="ruby-sinatra-green"
+export DOMAIN="availabledomain"
+export MANIFEST="../manifest.yml"
+export MANIFEST_BLUE_GREEN="../manifest.multi.yml"
+# TODO: exchange with unique subdomain for the domain to be able to use the route in cf
+export SUBDOMAIN="sinatra-app-main"
+
+# space and org
+# TODO: replace with according org and space information
+export ORGANIZATION="yourorgname"
+export SPACE="development"
+
+# service config
+# TODO: replace with according service information
+export SERVICE_NAME="servicename"
+export SERVICE_PLAN_NAME="planname"
+export SERVICE_INSTANCE_NAME="mysql-1"
+
+# Print configuration ---------------------------
+echo "-------------------------------"
+echo "-------------------------------"
+echo "Configuration: "
+echo "API Endpoint: $API"
+echo "Username: $USERNAME"
+echo "App Name: $APPNAME"
+echo "App Name 2: $APPNAME2"
+echo "Domain: $DOMAIN"
+echo "Manifest file: $MANIFEST"
+echo "Organization: $ORGANIZATION"
+echo "Space $SPACE"
+echo "Service name: $SERVICE_NAME"
+echo "Service plan name: $SERVICE_PLAN_NAME"
+echo "Service instance name: $SERVICE_INSTANCE_NAME"
+echo "-------------------------------"
+echo "-------------------------------"
+
+# -----------------------------------------------

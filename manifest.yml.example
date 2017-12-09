@@ -1,0 +1,17 @@
+---
+domain: 'TODO'
+services:
+  - mysql-2
+env:
+  RAILS_ENV: production
+  RACK_ENV: production
+  DATABASE_SERVICE_NAME: TODO
+
+applications:
+- name: ruby-sinatra-mysql-blue
+  memory: 64M
+  instances: 1
+  host: ruby-sinatra-mysql-blue
+  buildpack: ruby_buildpack
+  path: .
+  command: ruby app.rb
