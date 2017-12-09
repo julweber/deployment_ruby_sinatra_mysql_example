@@ -1,3 +1,4 @@
+require 'date'
 require 'json'
 require 'uri'
 require 'bundler'
@@ -6,7 +7,7 @@ require_relative './database'
 
 Bundler.require
 
-VERSION = '1.0'
+VERSION = '2.0'
 
 error do
   <<-ERROR
@@ -48,6 +49,9 @@ get '/store/:key' do
   value = Database.instance.get_key key
 
   result = {
+    meta: {
+      store_time: DateTime.now.to_s
+    },
     key: key,
     value: value
   }
@@ -60,6 +64,9 @@ post '/store/:key' do
 
   Database.instance.store_value key, value
   result = {
+    meta: {
+      retrieval_time: DateTime.now.to_s
+    },
     key: key,
     value: value
   }
